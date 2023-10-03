@@ -31,8 +31,7 @@ def sakha_news():
         else:
             return news_page(link)
     except Exception as ex:
-        print(ex)
-        return 'Error:31 - Упс, что-то пошло не так на первой стадии на сайте sakha_news'
+        return f'Error:31 - Упс, что-то пошло не так на первой стадии на сайте sakha_news - {ex}'
     finally:
         driver.close()
         driver.quit()
@@ -53,7 +52,7 @@ def news_page(url):
         full_text_list = []
         for text_p in full_text_derty:  #в цикле соеденяем все полученные p
             full_text_list.append(text_p.text)
-        full_text = '\n'.join(full_text_list) #из списка переводим в строку
+        full_text = '\n  '.join(full_text_list) #из списка переводим в строку
 
         # скачивание картинки
         image_block = full_text_block.find_elements(By.TAG_NAME, 'p')[1]
@@ -68,8 +67,7 @@ def news_page(url):
         return title, full_text, image_info
 
     except Exception as ex:
-        print(ex)
-        return 'Error:32 - Упс, что-то пошло не так на второй стадии на сайте sakha_news'
+        return f'Error:32 - Упс, что-то пошло не так на второй стадии на сайте sakha_news - {ex}'
     
 def load_image(url):
     try:

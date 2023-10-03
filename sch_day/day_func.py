@@ -13,6 +13,6 @@ def check_title(title):
         
     except Exception as ex:
         print(ex)
-        return f'Что-то пошло не так в функции Check_title на сайте sakha_day'
+        return f'Что-то пошло не так в функции Check_title на сайте sakha_day - '
 
 

@@ -21,8 +21,7 @@ def sakha_day():
         else:
             return news_page(news_link)
     except Exception as ex:
-        print(ex)
-        return 'Error:11 - Упс, что-то пошло не так на первой стадии на сайте sakha_day'
+        return f'Error:11 - Упс, что-то пошло не так на первой стадии на сайте sakha_day - {ex}'
 
  
 
@@ -42,7 +41,7 @@ def news_page(url):
         for text_p in full_text_derty:  #в цикле соеденяем все полученные p
             full_text_list.append(text_p.text)
 
-        full_text = '\n'.join(full_text_list) #из списка переводим в строку
+        full_text = '\n  '.join(full_text_list) #из списка переводим в строку
 
 
         # скачивание картинки
@@ -60,7 +59,7 @@ def news_page(url):
 
     except Exception as ex:
         print(ex)
-        return 'Error:12 - Упс, что-то пошло не так на второй стадии на сайте sakha_day'
+        return f'Error:12 - Упс, что-то пошло не так на второй стадии на сайте sakha_day - {ex}'
     
 
 def load_image(link):
